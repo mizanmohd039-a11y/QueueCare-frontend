@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QueueCare — Smart Doctor Queue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#"><span class="brand-icon">✚</span> Queue<span>Care</span></a>
+    <nav>
+      <a href="#doctors">Find Doctors</a>
+      <a href="#appointment">My Appointment</a>
+      <a href="#how">How it works</a>
+    </nav>
+    <button class="profile-btn">MZ</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">SMART HEALTHCARE • LIVE QUEUE</div>
+        <h1>Your doctor.<br><span>Your time.</span></h1>
+        <p>Book your token from home, track the live queue, and know when to leave for your appointment.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#doctors">Find a Doctor →</a>
+          <a class="secondary-btn" href="#appointment">Track My Token</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-top"><span>● LIVE QUEUE</span><small>Updated just now</small></div>
+        <h3>Dr. A. Sharma</h3>
+        <p class="muted">General Physician • City Care Clinic</p>
+        <div class="queue-grid">
+          <div><small>NOW SERVING</small><strong>#24</strong></div>
+          <div><small>YOUR TOKEN</small><strong class="accent">#31</strong></div>
+        </div>
+        <div class="eta">
+          <div><span>Patients ahead</span><b id="aheadHero">6</b></div>
+          <div><span>Estimated wait</span><b id="waitHero">48 min</b></div>
+        </div>
+        <div class="arrival"><span>🚗 Recommended arrival</span><b id="arrivalHero">12:30 PM</b></div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div><b>2,400+</b><span>Doctors</span></div>
+      <div><b>18,000+</b><span>Tokens booked</span></div>
+      <div><b>35 min</b><span>Average waiting saved</span></div>
+      <div><b>98%</b><span>Queue updates</span></div>
+    </section>
+
+    <section id="doctors" class="section">
+      <div class="section-heading">
+        <div><div class="eyebrow">BOOK AN APPOINTMENT</div><h2>Find a doctor</h2></div>
+        <div class="search">⌕ <input id="search" placeholder="Search doctor or specialty"></div>
+      </div>
+      <div id="doctorList" class="doctor-list"></div>
+    </section>
+
+    <section id="appointment" class="section appointment-section">
+      <div class="section-heading">
+        <div><div class="eyebrow">YOUR APPOINTMENT</div><h2>Live queue tracking</h2></div>
+        <span class="live-pill">● LIVE</span>
+      </div>
+      <div class="tracking-card">
+        <div class="doctor-mini">
+          <div class="avatar">AS</div>
+          <div><h3>Dr. A. Sharma</h3><p>General Physician</p><span>OPD: 10:00 AM – 2:00 PM</span></div>
+        </div>
+        <div class="big-token">
+          <small>YOUR TOKEN</small><strong id="yourToken">#31</strong>
+        </div>
+        <div class="progress-area">
+          <div class="progress-label"><span>Queue progress</span><b id="progressText">#24 → #31</b></div>
+          <div class="progress"><i id="progressBar"></i></div>
+          <div class="queue-numbers"><span>#24</span><span>#25</span><span>#26</span><span>#27</span><span>#28</span><span>#29</span><span>#30</span><span class="current">#31</span></div>
+        </div>
+        <div class="eta-cards">
+          <div><small>PATIENTS AHEAD</small><b id="ahead">6</b></div>
+          <div><small>ESTIMATED WAIT</small><b id="wait">48 min</b></div>
+          <div><small>EXPECTED TIME</small><b id="expected">12:42 PM</b></div>
+          <div class="highlight"><small>LEAVE HOME BY</small><b id="leave">12:30 PM</b></div>
+        </div>
+        <button class="primary-btn full" onclick="refreshQueue()">↻ Refresh live queue</button>
+      </div>
+    </section>
+
+    <section id="how" class="section">
+      <div class="section-heading centered"><div><div class="eyebrow">HOW QUEUECARE WORKS</div><h2>Less waiting. More living.</h2></div></div>
+      <div class="steps">
+        <div><span>01</span><h3>Book your token</h3><p>Select a doctor and reserve your place in the queue from home.</p></div>
+        <div><span>02</span><h3>Track the queue</h3><p>See the currently serving token and how many patients are ahead.</p></div>
+        <div><span>03</span><h3>Know your time</h3><p>Get a dynamic ETA and a suggested time to leave for the clinic.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="brand">✚ Queue<span>Care</span></div><p>Smart appointments. Smarter waiting.</p></footer>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
